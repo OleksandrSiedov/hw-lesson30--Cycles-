@@ -32,7 +32,7 @@ function checkAge(a) {
 
 //task #2 - Запитай у користувача число від 0 до 9 і виведи йому спецсимвол, який розташований на цій клавіші (1 !, 2 @, 3 # і т. д).
 
-let c = Number(document.querySelector(`.num`).value);
+let c = document.querySelector(`.num`).value;
 
 function checkSymboll(c) {
 
@@ -75,4 +75,3 @@ function checkSymboll(c) {
 }
   document.querySelector(`.task2Answer`).innerHTML = d;
 
-  
