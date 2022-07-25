@@ -30,6 +30,49 @@ function checkAge(a) {
 
 // Алгоритм работает, но вывод кривой. Обсудить с Мишей
 
+//task #2 - Запитай у користувача число від 0 до 9 і виведи йому спецсимвол, який розташований на цій клавіші (1 !, 2 @, 3 # і т. д).
 
+let c = Number(document.querySelector(`.num`).value);
 
+function checkSymboll(c) {
 
+  let d;
+  switch (c) {
+    case '0':
+      d = ')';
+      break;
+    case '1':
+      d = '!';
+      break;
+    case '2':
+      d = '@';
+      break;
+    case '3':
+      d = '#';
+      break;
+    case '4':
+      d = '$';
+      break;
+    case '5':
+      d = '%';
+      break;
+    case '6':
+      d = 'ˆ';
+      break;
+    case '7':
+      d = '&';
+      break;
+    case '8':
+      d = '*';
+      break;
+    case '9':
+      d = '(';
+      break;
+    default:
+      d = 'Incorrect data. Please enter number from 0 to 9';
+      break;
+  }
+}
+  document.querySelector(`.task2Answer`).innerHTML = d;
+
+  
