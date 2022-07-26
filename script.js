@@ -131,3 +131,25 @@ function gcd() {
     document.querySelector(`.task4Answer`).innerHTML = 'ERROR! Please enter positive integer numbers';
   }
 }
+
+// task 5 - Запитай у користувача (ЦІЛЕ ПОЗИТИВНЕ) число і виведи всі дільники цього числа.
+
+document.querySelector(`.task5 button`).onclick = getDividers;
+
+function getDividers(e) {
+  e.preventDefault();
+
+  let num = Number(document.querySelector(`[name="numTask5"]`).value);
+
+  if (Number.isInteger(num) && num > 0) {
+    let arrDiv = [];
+    for (let i = 0; i <= num; i++) {
+      if ((num % i) == 0) {
+        arrDiv.push(i);
+      }
+    document.querySelector(`.task5Answer`).innerHTML = arrDiv;  
+    }
+  } else {
+    document.querySelector(`.task5Answer`).innerHTML = 'ERROR! Please enter positive integer number';
+  }
+}
