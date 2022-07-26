@@ -174,3 +174,50 @@ function checkPalindrome(e) {
     document.querySelector(`.task6Answer`).innerHTML = 'ERROR! Please enter positive integer 5 digit number';
   }
 }
+
+/* task 7 - Запитай у користувача суму покупки і виведи суму до оплати зі знижкою:
+    від 200 до 300 - знижка буде 3%; 
+    від 300 до 500 - 5%;
+    від 500 і вище - 7%.*/
+
+document.querySelector(`.task7 button`).onclick = discountSum;
+
+function discountSum(e) {
+  e.preventDefault();
+
+  let sum = Number(document.querySelector(`[name='numTask7']`).value);
+  document.querySelector(`.task7Answer`).style.backgroundColor = 'white';
+
+  if (sum > 0) {
+
+    let sumDiscounted = sum;
+    
+    if ((sum >= 200) && (sum < 300)) {
+
+      sumDiscounted = Math.round((sum * (0.97)), -2); //неправильно работает!!! ОБСУДИТЬ с МИШЕЙ!
+      document.querySelector(`.task7Discount`).innerHTML = `3%`;
+      document.querySelector(`.task7Answer`).innerHTML = sumDiscounted;
+
+    } else if ((sum >= 300) && (sum < 500)) {
+
+      sumDiscounted = Math.round((sum * (0.95)), -2); //неправильно работает!!! ОБСУДИТЬ с МИШЕЙ!
+      document.querySelector(`.task7Discount`).innerHTML = `5%`;
+      document.querySelector(`.task7Answer`).innerHTML = sumDiscounted;
+
+    } else if ((sum >= 500)) {
+
+      sumDiscounted = Math.round((sum * (0.93)), -2); //неправильно работает!!! ОБСУДИТЬ с МИШЕЙ!
+      document.querySelector(`.task7Discount`).innerHTML = `7%`;
+      document.querySelector(`.task7Answer`).innerHTML = sumDiscounted;
+
+    } else if ((sum < 200)) {
+      document.querySelector(`.task7Discount`).innerHTML = `NO DISCOUNT`;
+      document.querySelector(`.task7Answer`).innerHTML = sumDiscounted;
+    }
+
+  } else {
+    document.querySelector(`.task7Answer`).style.backgroundColor = 'red';
+    document.querySelector(`.task7Answer`).innerHTML = 'ERROR! Please enter positive number';
+  }
+
+}
