@@ -231,6 +231,10 @@ document.querySelector(`.task8 button`).onclick = getStatistics;
 function getStatistics(e) {
   e.preventDefault();
 
-  let nums = document.querySelector(`.numsTask8`).value; // не понимаю почему не работает
-  console.log(`nums = `,  nums )
+  let nums = document.querySelector(`[name="numsTask8"]`).value;
+  console.log(`nums = `,  nums);
+  console.log(typeof(nums));
+  let arr = nums.split(',');
+  console.log(`arr = `,  arr);
+  console.log(typeof(arr));
 }
