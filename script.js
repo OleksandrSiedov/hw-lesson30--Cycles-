@@ -147,9 +147,30 @@ function getDividers(e) {
       if ((num % i) == 0) {
         arrDiv.push(i);
       }
-    document.querySelector(`.task5Answer`).innerHTML = arrDiv;  
+      document.querySelector(`.task5Answer`).innerHTML = arrDiv;
     }
   } else {
     document.querySelector(`.task5Answer`).innerHTML = 'ERROR! Please enter positive integer number';
+  }
+}
+
+// task 6 - Запитай у користувача п’ятирозрядне число і визначи, чи є воно паліндромом.
+
+document.querySelector(`.task6 button`).onclick = checkPalindrome;
+
+function checkPalindrome(e) {
+  e.preventDefault();
+
+  let num = document.querySelector(`[name='numTask6']`).value;
+  let check = Number(document.querySelector(`[name='numTask6']`).value);
+
+  if (Number.isInteger(check) && (check % 10000 >= 1) && (check < 100000)) {
+    let arr = [];
+    for (let i = 1; i <= (num.length); i++) {
+      arr.push(num[num.length - i]);
+    }
+    document.querySelector(`.task6Answer`).innerHTML = (num == arr.join(''));
+  } else {
+    document.querySelector(`.task6Answer`).innerHTML = 'ERROR! Please enter positive integer 5 digit number';
   }
 }
