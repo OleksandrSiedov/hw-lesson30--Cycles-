@@ -191,7 +191,7 @@ function discountSum(e) {
   if (sum > 0) {
 
     let sumDiscounted = sum;
-    
+
     if ((sum >= 200) && (sum < 300)) {
 
       sumDiscounted = Math.round((sum * (0.97)), -2); //неправильно работает!!! ОБСУДИТЬ с МИШЕЙ!
@@ -220,4 +220,17 @@ function discountSum(e) {
     document.querySelector(`.task7Answer`).innerHTML = 'ERROR! Please enter positive number';
   }
 
+}
+
+// task 8 - Запитай у користувача 10 чисел і порахуй, скільки він ввів додатніх, від’ємних і нулів. При цьому також порахуй, скільки з них парних і непарних. Виведи статистику на екран. Враховуй, що достатньо однієї змінної (не 10) для введення чисел користувачем.
+
+// решил не делать проверку чисел
+
+document.querySelector(`.task8 button`).onclick = getStatistics;
+
+function getStatistics(e) {
+  e.preventDefault();
+
+  let nums = document.querySelector(`.numsTask8`).value; // не понимаю почему не работает
+  console.log(`nums = `,  nums )
 }
